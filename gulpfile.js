@@ -9,8 +9,8 @@ var uglify = require('gulp-uglify');
 var babel = require('gulp-babel');
 var webpack = require('webpack');
 
-var srcPath = 'src';
-var libPath = 'lib';
+var srcPath = 'july-meetup';
+var libPath = 'july-dist';
 
 function getFolders(dir) {
     return fs.readdirSync(dir)
