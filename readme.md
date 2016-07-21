@@ -8,9 +8,9 @@ Yes, I'm serious.  We knew we needed something better so we started looking arou
 So we looked at a lot of different frameworks (Angular, Knockout, Aurelia, etc.) but we settled on React.  
 
 We chose React for a few reasons:
-1. Speed
-2. Reusability
-3. Elegance
+* 1. Speed
+* 2. Reusability
+* 3. Elegance
 
 ####Tell me more about speed!
 React is the king of speed.  Analysis after analysis after analysis proves that it trumps all of the other frameworks, and in some cases can defeat even raw DOM manipulation.  This is very important as we all need responsive applications.
