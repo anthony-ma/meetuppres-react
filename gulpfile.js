@@ -7,11 +7,10 @@ var concat = require('gulp-concat');
 var rename = require('gulp-rename');
 var uglify = require('gulp-uglify');
 var babel = require('gulp-babel');
-var debug = require('gulp-debug');
 var webpack = require('webpack');
 
-var srcPath = 'july-meetup';
-var libPath = 'july-dist';
+var srcPath = 'src';
+var libPath = 'lib';
 
 function getFolders(dir) {
     return fs.readdirSync(dir)
@@ -34,17 +33,14 @@ gulp.task('clean', function (cb) {
 gulp.task('scripts', ['clean'], function() {
    var folders = getFolders(srcPath);
 
-console.log(folders);
    //foreach folder
    var tasks = folders.map(function(folder) {
     //foreach file in a folder
-      return gulp.src(path.join(srcPath, folder, '/**/*.jsx'))
+      return gulp.src(path.join(srcPath, folder, '/**/*.js'))
         // transpile
         .pipe(babel())
-        // log the file names for debug
-        .pipe(debug())
         // write to output
-        .pipe(gulp.dest(path.join(srcPath, folder)));
+        .pipe(gulp.dest(libPath));
    });
 
    return tasks;

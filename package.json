@@ -1,14 +1,19 @@
 {
-  "name": "react.presentation",
+  "name": "medkoder.frontend.core",
   "version": "1.0.0",
   "private": true,
-  "description": "React Presentation for Mandeville Web Meetup",
+  "description": "Shared frontend lib",
   "main": "./lib",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "lint": "eslint . --ext .js --ext .jsx --cache"
   },
-  "author": "Bob Dole",
+  "repository": {
+    "type": "git",
+    "url": "git@medkoder.git.beanstalkapp.com:/medkoder/medkoder-frontend-core.git"
+  },
+  "author": "Medkoder",
+  "license": "ISC",
   "devDependencies": {
     "babel-cli": "^6.7.5",
     "babel-core": "^6.7.6",
@@ -28,22 +33,23 @@
     "gulp": "^3.9.1",
     "gulp-babel": "^6.1.2",
     "gulp-concat": "^2.6.0",
-    "gulp-debug": "^2.1.2",
     "gulp-rename": "^1.2.2",
     "gulp-uglify": "^1.5.3",
+    "lodash": "^4.11.2",
     "merge-stream": "^1.0.0",
     "node-sass": "3.4.2",
     "normalize.css": "^4.1.1",
     "path": "^0.12.7",
+    "react": "15.0.1",
+    "react-addons-css-transition-group": "15.0.1",
+    "react-dom": "15.0.1",
+    "react-sidenav": "^1.0.4",
+    "react-toolbox": "^0.16.2",
     "rimraf": "2.2.8",
     "sass-loader": "^3.2.0",
     "style-loader": "^0.13.1",
+    "toolbox-loader": "0.0.3",
     "webpack": "^1.13.0"
   },
-  "dependencies": {
-    "lodash": "^4.11.2",
-    "react": "~15.2.1",
-    "react-addons-css-transition-group": "~15.2.1",
-    "react-dom": "~15.2.1"
-  }
+  "dependencies": {}
 }
