@@ -1,18 +1,12 @@
 class TestComponent extends React.Component {
-    render = () => <span>Hi</span>;
-}
-
-
-class TestComponent2 extends React.Component {
     render = () => {
         return (
-            <span>Hi</span>
+            <span>Hello World</span>
         );
     }
 }
 
-
 ReactDOM.render(
-    <TestComponent2 />,
+    <TestComponent />,
     document.getElementById('app')
 );

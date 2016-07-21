@@ -24,7 +24,7 @@ var TestComponent = function (_React$Component) {
             return React.createElement(
                 'span',
                 null,
-                'Hi'
+                'Hello World'
             );
         }, _temp), _possibleConstructorReturn(_this, _ret);
     }
@@ -32,30 +32,4 @@ var TestComponent = function (_React$Component) {
     return TestComponent;
 }(React.Component);
 
-var TestComponent2 = function (_React$Component2) {
-    _inherits(TestComponent2, _React$Component2);
-
-    function TestComponent2() {
-        var _Object$getPrototypeO2;
-
-        var _temp2, _this2, _ret2;
-
-        _classCallCheck(this, TestComponent2);
-
-        for (var _len2 = arguments.length, args = Array(_len2), _key2 = 0; _key2 < _len2; _key2++) {
-            args[_key2] = arguments[_key2];
-        }
-
-        return _ret2 = (_temp2 = (_this2 = _possibleConstructorReturn(this, (_Object$getPrototypeO2 = Object.getPrototypeOf(TestComponent2)).call.apply(_Object$getPrototypeO2, [this].concat(args))), _this2), _this2.render = function () {
-            return React.createElement(
-                'span',
-                null,
-                'Hi'
-            );
-        }, _temp2), _possibleConstructorReturn(_this2, _ret2);
-    }
-
-    return TestComponent2;
-}(React.Component);
-
-ReactDOM.render(React.createElement(TestComponent2, null), document.getElementById('app'));
+ReactDOM.render(React.createElement(TestComponent, null), document.getElementById('app'));
