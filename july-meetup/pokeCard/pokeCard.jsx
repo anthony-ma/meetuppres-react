@@ -32,14 +32,19 @@ class PokeCard extends React.Component {
             position: 'absolute',
             top: '50%',
             left: '50%',
-            transform: 'translate(-50%, -50%)'
+            transform: 'translate(-50%, -50%)',
+            width: '800px',
+            margin: 'auto'
         }
     }
 
     card = (pokemon) => {
         return (
-            <div key={pokemon.number} className="col-md-4">
-                <span>{pokemon.name}</span>
+            <div key={pokemon.number}>
+                <div className={`card ${pokemon.name}`}>
+                    <h2 className='header'>{pokemon.name}</h2>
+                    <h3 className='subheader'>{pokemon.number}</h3>
+                </div>
             </div>
         )
     }
@@ -47,7 +52,7 @@ class PokeCard extends React.Component {
     render = () => {
         return (
             <main style={this.styles.main}>
-                <div style={this.styles.centered} className="row">
+                <div style={this.styles.centered}>
                     {this.state.pokemon.map(this.card)}
                 </div>
             </main>
