@@ -47,16 +47,27 @@ var PokeCard = function (_React$Component) {
                 position: 'absolute',
                 top: '50%',
                 left: '50%',
-                transform: 'translate(-50%, -50%)'
+                transform: 'translate(-50%, -50%)',
+                width: '800px',
+                margin: 'auto'
             }
         }, _this.card = function (pokemon) {
             return React.createElement(
                 'div',
-                { key: pokemon.number, className: 'col-md-4' },
+                { key: pokemon.number },
                 React.createElement(
-                    'span',
-                    null,
-                    pokemon.name
+                    'div',
+                    { className: 'card ' + pokemon.name },
+                    React.createElement(
+                        'h2',
+                        { className: 'header' },
+                        pokemon.name
+                    ),
+                    React.createElement(
+                        'h3',
+                        { className: 'subheader' },
+                        pokemon.number
+                    )
                 )
             );
         }, _this.render = function () {
@@ -65,7 +76,7 @@ var PokeCard = function (_React$Component) {
                 { style: _this.styles.main },
                 React.createElement(
                     'div',
-                    { style: _this.styles.centered, className: 'row' },
+                    { style: _this.styles.centered },
                     _this.state.pokemon.map(_this.card)
                 )
             );
