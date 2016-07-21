@@ -72,7 +72,7 @@ gulp.task('webpack', ['lib'], function(done) {
     });
 });
 
-gulp.task('lib', ['clean', 'scripts', 'assets']);
+gulp.task('lib', ['clean', 'scripts']);
 gulp.task('default', ['lib']);
 
 gulp.task('all', ['default', 'webpack']);
