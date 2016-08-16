@@ -1,0 +1,106 @@
+body {
+    background-color:#CCC9DC !important;
+    font-family: 'Roboto', sans-serif !important;
+}
+
+
+.card p {
+    font-family: 'Roboto', sans-serif !important;
+}
+
+
+#app h1 {
+    text-align:center;
+    text-transform: uppercase;
+    color:#94A9B6;
+}
+.subheader {
+    text-align: center;
+    color: #DDDDDD;
+    bottom: 20px;
+    position: relative;
+}
+
+/*LOT CSS*/
+
+.lot {
+    width: 85%;
+    -webkit-box-shadow: 4px 4px 2px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 4px 4px 2px 0px rgba(0,0,0,0.75);
+    box-shadow: 4px 4px 2px 0px rgba(0,0,0,0.75);
+    border: 1px solid #0C1821;
+    font-family: 'Roboto', sans-serif !important;
+
+    margin:auto;
+    margin-bottom:7px;
+}
+
+.lot-name {
+    font-size:1.7em;
+    margin:auto;
+    margin-bottom:12px;
+    vertical-align:top;
+}
+.lot-name::before {
+    content:"";
+}
+.lot-address::before {
+    content:"Address";
+}
+.lot-manager::before {
+    content:"Lot Manager";
+}
+.lot-phone::before {
+    content:"Phone #";
+}
+.lot-space-count::before {
+    content:"Space Count";
+}
+
+.lot-details {
+    margin:auto;
+    padding:20px;
+    background-color:#673AB7;
+    height:40px;
+}
+
+.lot-details p, .space-list p {
+    width:24%;
+    display:inline-block;
+    color:#DDDDDD;
+}
+
+.lot-details p::before {
+    position: absolute;
+    margin-top: -20px;
+    font-size: .8em;
+    color:rgba(221,221,221,0.45)
+}
+
+.space-list {
+    background-color:rgb(250, 250, 250);
+
+}
+.space {
+    padding:20px 20px 20px 20px;
+    border-bottom:1px solid #BDBDBD;
+    height:40px;
+}
+.space p {
+    color:#212121 !important;
+}
+.space p::before {
+    position: absolute;
+    margin-top: -20px;
+    font-size: .8em;
+    color:rgba(33,33,33,0.45)
+}
+.space-number::before {
+    content:"Space #";
+}
+.space-occupied::before {
+    content:"Occupied";
+}
+.space-ticket-number::before {
+    content:"Ticket #";
+}
