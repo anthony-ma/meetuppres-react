@@ -25,65 +25,80 @@ var App = function (_React$Component) {
         return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_Object$getPrototypeO = Object.getPrototypeOf(App)).call.apply(_Object$getPrototypeO, [this].concat(args))), _this), _this.state = {
             title: 'PARKMASTER 3001',
             lots: [{
+                id: 1,
                 name: 'UPARK',
                 address: '123 Park Ave., New York, NY 10010',
                 phoneNumber: '1-800-YOU-PARK',
                 manager: 'Bob Loblaw',
                 spaces: [{
+                    id: 11,
                     number: 1,
                     occupied: false,
                     ticket: ''
                 }, {
+                    id: 12,
                     number: 2,
                     occupied: true,
                     ticket: 'A00'
                 }, {
+                    id: 13,
                     number: 3,
                     occupied: true,
                     ticket: '896'
                 }, {
+                    id: 14,
                     number: 4,
                     occupied: true,
                     ticket: '250'
                 }, {
+                    id: 15,
                     number: 5,
                     occupied: true,
                     ticket: 'P25'
                 }]
             }, {
+                id: 2,
                 name: 'PARK \'N FLY',
                 address: '1017 Airline Dr, Kenner, LA 70062',
-                phoneNumber: '1-800-YOU-PARK',
-                manager: 'Bob Loblaw',
+                phoneNumber: '1-800-PARK-NFLY',
+                manager: 'Harrison Ford',
                 spaces: [{
+                    id: 21,
                     number: 1,
                     occupied: false,
                     ticket: ''
                 }, {
+                    id: 22,
                     number: 2,
                     occupied: true,
-                    ticket: 'A00'
+                    ticket: 'B00'
                 }, {
+                    id: 23,
                     number: 3,
                     occupied: true,
-                    ticket: '896'
+                    ticket: '643'
                 }, {
+                    id: 24,
                     number: 4,
                     occupied: true,
-                    ticket: '250'
+                    ticket: 'X19'
                 }, {
+                    id: 25,
                     number: 5,
                     occupied: true,
-                    ticket: 'P25'
+                    ticket: 'L90'
                 }]
             }]
+        }, _this.selectSpace = function (lotId, spaceId) {
+            console.log(lotId);
+            console.log(spaceId);
         }, _this.render = function () {
             return React.createElement(
                 'div',
                 null,
                 React.createElement(Header, { title: _this.state.title }),
                 _this.state.lots.map(function (lot) {
-                    return React.createElement(Lot, _extends({ key: lot.name }, lot));
+                    return React.createElement(Lot, _extends({ key: lot.id }, lot, { selectSpace: _this.selectSpace }));
                 })
             );
         }, _temp), _possibleConstructorReturn(_this, _ret);

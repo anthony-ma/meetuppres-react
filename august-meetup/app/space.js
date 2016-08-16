@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -20,11 +20,22 @@ var Space = function (_React$Component) {
             args[_key] = arguments[_key];
         }
 
-        return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_Object$getPrototypeO = Object.getPrototypeOf(Space)).call.apply(_Object$getPrototypeO, [this].concat(args))), _this), _this.render = function () {
+        return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_Object$getPrototypeO = Object.getPrototypeOf(Space)).call.apply(_Object$getPrototypeO, [this].concat(args))), _this), _this.selectSpace = function () {
+            _this.props.selectSpace(_this.props.id);
+        }, _this.render = function () {
             return React.createElement(
-                "div",
-                null,
-                _this.props.number
+                'div',
+                { className: 'space ' + (_this.props.occupied ? 'space-occupied-true' : ''), onClick: _this.selectSpace },
+                React.createElement(
+                    'p',
+                    null,
+                    _this.props.number
+                ),
+                React.createElement(
+                    'p',
+                    null,
+                    _this.props.ticket
+                )
             );
         }, _temp), _possibleConstructorReturn(_this, _ret);
     }
@@ -33,6 +44,7 @@ var Space = function (_React$Component) {
 }(React.Component);
 
 Space.propTypes = {
+    id: React.PropTypes.number.isRequired,
     occupied: React.PropTypes.bool.isRequired,
     number: React.PropTypes.number.isRequired,
     ticket: React.PropTypes.string.isRequired

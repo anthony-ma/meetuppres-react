@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
@@ -22,22 +22,28 @@ var Lot = function (_React$Component) {
             args[_key] = arguments[_key];
         }
 
-        return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_Object$getPrototypeO = Object.getPrototypeOf(Lot)).call.apply(_Object$getPrototypeO, [this].concat(args))), _this), _this.render = function () {
+        return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_Object$getPrototypeO = Object.getPrototypeOf(Lot)).call.apply(_Object$getPrototypeO, [this].concat(args))), _this), _this.selectSpace = function (spaceId) {
+            _this.props.selectSpace(_this.props.id, spaceId);
+        }, _this.render = function () {
             return React.createElement(
-                "div",
+                'div',
                 null,
                 React.createElement(
-                    "div",
+                    'div',
                     null,
                     React.createElement(
-                        "p",
+                        'p',
                         null,
                         _this.props.name
                     )
                 ),
-                _this.props.spaces.map(function (space) {
-                    return React.createElement(Space, _extends({ key: space.number }, space));
-                })
+                React.createElement(
+                    'div',
+                    { className: 'space-list' },
+                    _this.props.spaces.map(function (space) {
+                        return React.createElement(Space, _extends({ key: space.id }, space, { selectSpace: _this.selectSpace }));
+                    })
+                )
             );
         }, _temp), _possibleConstructorReturn(_this, _ret);
     }
@@ -46,10 +52,12 @@ var Lot = function (_React$Component) {
 }(React.Component);
 
 Lot.propTypes = {
+    id: React.PropTypes.number.isRequired,
     address: React.PropTypes.string.isRequired,
     name: React.PropTypes.string.isRequired,
     manager: React.PropTypes.string.isRequired,
     phoneNumber: React.PropTypes.string.isRequired,
-    spaces: React.PropTypes.array.isRequired
+    spaces: React.PropTypes.array.isRequired,
+    selectSpace: React.PropTypes.func.isRequired
 };
 //# sourceMappingURL=C:\git\react-presentation\august-meetup\app\lot.js.map
