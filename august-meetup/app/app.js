@@ -96,7 +96,11 @@ var App = function (_React$Component) {
             return React.createElement(
                 'div',
                 null,
-                React.createElement(Header, { title: _this.state.title }),
+                React.createElement(
+                    'div',
+                    { className: 'header' },
+                    _this.state.title
+                ),
                 _this.state.lots.map(function (lot) {
                     return React.createElement(Lot, _extends({ key: lot.id }, lot, { selectSpace: _this.selectSpace }));
                 })
