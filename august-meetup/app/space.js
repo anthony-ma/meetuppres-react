@@ -20,21 +20,32 @@ var Space = function (_React$Component) {
             args[_key] = arguments[_key];
         }
 
-        return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_Object$getPrototypeO = Object.getPrototypeOf(Space)).call.apply(_Object$getPrototypeO, [this].concat(args))), _this), _this.selectSpace = function () {
-            _this.props.selectSpace(_this.props.id);
+        return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_Object$getPrototypeO = Object.getPrototypeOf(Space)).call.apply(_Object$getPrototypeO, [this].concat(args))), _this), _this.occupySpace = function () {
+            debugger;
+            var newTicket = _this.refs.newTicket.value;
+            _this.props.occupySpace(_this.props.id, newTicket);
+        }, _this.clearSpace = function () {
+            _this.props.clearSpace(_this.props.id);
         }, _this.render = function () {
             return React.createElement(
                 'div',
-                { className: 'space ' + (_this.props.occupied ? 'space-occupied-true' : ''), onClick: _this.selectSpace },
+                { className: 'space' + (_this.props.occupied ? ' space-occupied-true' : '') },
                 React.createElement(
                     'p',
-                    null,
+                    { className: 'space-number' },
                     _this.props.number
                 ),
-                React.createElement(
+                _this.props.occupied && React.createElement(
                     'p',
-                    null,
-                    _this.props.ticket
+                    { className: 'space-ticket' },
+                    _this.props.ticket,
+                    React.createElement('button', { type: 'button', className: 'space-occupy-button', onClick: _this.clearSpace })
+                ),
+                !_this.props.occupied && React.createElement(
+                    'p',
+                    { className: 'space-ticket' },
+                    React.createElement('input', { type: 'text', ref: 'newTicket' }),
+                    React.createElement('button', { type: 'button', className: 'space-clear-button', onClick: _this.occupySpace })
                 )
             );
         }, _temp), _possibleConstructorReturn(_this, _ret);
@@ -49,4 +60,4 @@ Space.propTypes = {
     number: React.PropTypes.number.isRequired,
     ticket: React.PropTypes.string.isRequired
 };
-//# sourceMappingURL=C:\git\react-presentation\august-meetup\app\space.js.map
+//# sourceMappingURL=C:\src\meetuppres-react\august-meetup\app\space.js.map

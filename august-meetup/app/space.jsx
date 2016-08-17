@@ -6,14 +6,34 @@ class Space extends React.Component {
         ticket: React.PropTypes.string.isRequired
     }
 
-    selectSpace = () => {
-        this.props.selectSpace(this.props.id);
+    occupySpace = () => {
+      debugger;
+      const newTicket = this.refs.newTicket.value;
+      this.props.occupySpace(this.props.id, newTicket);
+    }
+
+    clearSpace = () => {
+      this.props.clearSpace(this.props.id);
     }
 
     render = () => (
-        <div className={'space ' + (this.props.occupied ? 'space-occupied-true' : '')} onClick={this.selectSpace}>
-            <p>{this.props.number}</p>
-            <p>{this.props.ticket}</p>
+        <div className={'space' + (this.props.occupied ? ' space-occupied-true' : '')}>
+            <p className='space-number'>{this.props.number}</p>
+
+            {this.props.occupied &&
+              <p className='space-ticket'>
+                {this.props.ticket}
+                <button type='button' className='space-occupy-button' onClick={this.clearSpace} />
+              </p>
+            }
+
+            {!this.props.occupied &&
+              <p className='space-ticket'>
+                <input type='text' ref="newTicket" />
+                <button type='button' className='space-clear-button' onClick={this.occupySpace} />
+              </p>
+            }
+
         </div>
     )
 }
