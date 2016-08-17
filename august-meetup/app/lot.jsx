@@ -6,7 +6,8 @@ class Lot extends React.Component {
         manager: React.PropTypes.string.isRequired,
         phoneNumber: React.PropTypes.string.isRequired,
         spaces: React.PropTypes.array.isRequired,
-        selectSpace: React.PropTypes.func.isRequired
+        occupySpace: React.PropTypes.func.isRequired,
+        clearSpace: React.PropTypes.func.isRequired
     }
 
     state = {
@@ -14,8 +15,12 @@ class Lot extends React.Component {
         open: false
     }
 
-    selectSpace = (spaceId) => {
-        this.props.selectSpace(this.props.id, spaceId);
+    occupySpace = (spaceId, ticket) => {
+        this.props.occupySpace(this.props.id, spaceId, ticket);
+    }
+
+    clearSpace = (spaceId) => {
+        this.props.clearSpace(this.props.id, spaceId);
     }
 
     handleClick = () => {
@@ -33,10 +38,10 @@ class Lot extends React.Component {
                 <p className='lot-name'>{this.props.name}</p>
                 <p className='lot-address'>{this.props.address}</p>
                 <p className='lot-manager'>{this.props.manager}</p>
-                <p className='lot-phone'>{this.props.phone}</p>
+                <p className='lot-phone'>{this.props.phoneNumber}</p>
             </div>
             <div className='space-list'>
-                {this.props.spaces.map((space) => <Space key={space.id} {...space} selectSpace={this.selectSpace} clearSpace={this.clearSpace} />)}
+                {this.props.spaces.map((space) => <Space key={space.id} {...space} occupySpace={this.occupySpace} clearSpace={this.clearSpace} />)}
             </div>
         </div>
     )

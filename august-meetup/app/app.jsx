@@ -86,13 +86,22 @@ class App extends React.Component {
     }
 
     occupySpace = (lotId, spaceId, ticket) => {
-        console.log(lotId);
-        console.log(spaceId);
+        var newLots = this.getNewLots(lotId, spaceId, true, ticket);
+        this.setState({lots: newLots});
     }
 
     clearSpace = (lotId, spaceId) => {
-        console.log(lotId);
-        console.log(spaceId);
+        var newLots = this.getNewLots(lotId, spaceId, false, '');
+        this.setState({lots: newLots});
+    }
+
+    getNewLots = (lotId, spaceId, occupied, ticket) => {
+        let lotIndex = _.findIndex(this.state.lots, {id: lotId});
+        let spaceIndex = _.findIndex(this.state.lots[lotIndex].spaces, {id: spaceId});
+        let newLots = this.state.lots;
+        newLots[spaceIndex].spaces[spaceIndex].occupied = occupied;
+        newLots[spaceIndex].spaces[spaceIndex].ticket = ticket;
+        return newLots;
     }
 
     render = () => {

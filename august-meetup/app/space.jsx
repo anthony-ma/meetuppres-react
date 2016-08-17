@@ -3,11 +3,12 @@ class Space extends React.Component {
         id: React.PropTypes.number.isRequired,
         occupied: React.PropTypes.bool.isRequired,
         number: React.PropTypes.number.isRequired,
-        ticket: React.PropTypes.string.isRequired
+        ticket: React.PropTypes.string.isRequired,
+        occupySpace: React.PropTypes.func.isRequired,
+        clearSpace: React.PropTypes.func.isRequired
     }
 
     occupySpace = () => {
-      debugger;
       const newTicket = this.refs.newTicket.value;
       this.props.occupySpace(this.props.id, newTicket);
     }

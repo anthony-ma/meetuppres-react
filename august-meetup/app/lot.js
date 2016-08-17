@@ -25,8 +25,10 @@ var Lot = function (_React$Component) {
         return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_Object$getPrototypeO = Object.getPrototypeOf(Lot)).call.apply(_Object$getPrototypeO, [this].concat(args))), _this), _this.state = {
             class: 'lot',
             open: false
-        }, _this.selectSpace = function (spaceId) {
-            _this.props.selectSpace(_this.props.id, spaceId);
+        }, _this.occupySpace = function (spaceId, ticket) {
+            _this.props.occupySpace(_this.props.id, spaceId, ticket);
+        }, _this.clearSpace = function (spaceId) {
+            _this.props.clearSpace(_this.props.id, spaceId);
         }, _this.handleClick = function () {
             if (_this.state.open) {
                 _this.setState({ open: false, class: "lot" });
@@ -63,14 +65,14 @@ var Lot = function (_React$Component) {
                     React.createElement(
                         "p",
                         { className: "lot-phone" },
-                        _this.props.phone
+                        _this.props.phoneNumber
                     )
                 ),
                 React.createElement(
                     "div",
                     { className: "space-list" },
                     _this.props.spaces.map(function (space) {
-                        return React.createElement(Space, _extends({ key: space.id }, space, { selectSpace: _this.selectSpace, clearSpace: _this.clearSpace }));
+                        return React.createElement(Space, _extends({ key: space.id }, space, { occupySpace: _this.occupySpace, clearSpace: _this.clearSpace }));
                     })
                 )
             );
@@ -87,6 +89,7 @@ Lot.propTypes = {
     manager: React.PropTypes.string.isRequired,
     phoneNumber: React.PropTypes.string.isRequired,
     spaces: React.PropTypes.array.isRequired,
-    selectSpace: React.PropTypes.func.isRequired
+    occupySpace: React.PropTypes.func.isRequired,
+    clearSpace: React.PropTypes.func.isRequired
 };
-//# sourceMappingURL=C:\Projects\meetuppres-react\august-meetup\app\lot.js.map
+//# sourceMappingURL=C:\git\react-presentation\august-meetup\app\lot.js.map

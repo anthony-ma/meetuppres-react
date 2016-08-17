@@ -92,11 +92,18 @@ var App = function (_React$Component) {
                 class: 'lot'
             }]
         }, _this.occupySpace = function (lotId, spaceId, ticket) {
-            console.log(lotId);
-            console.log(spaceId);
+            var newLots = _this.getNewLots(lotId, spaceId, true, ticket);
+            _this.setState({ lots: newLots });
         }, _this.clearSpace = function (lotId, spaceId) {
-            console.log(lotId);
-            console.log(spaceId);
+            var newLots = _this.getNewLots(lotId, spaceId, false, '');
+            _this.setState({ lots: newLots });
+        }, _this.getNewLots = function (lotId, spaceId, occupied, ticket) {
+            var lotIndex = _.findIndex(_this.state.lots, { id: lotId });
+            var spaceIndex = _.findIndex(_this.state.lots[lotIndex].spaces, { id: spaceId });
+            var newLots = _this.state.lots;
+            newLots[spaceIndex].spaces[spaceIndex].occupied = occupied;
+            newLots[spaceIndex].spaces[spaceIndex].ticket = ticket;
+            return newLots;
         }, _this.render = function () {
             return React.createElement(
                 'div',
@@ -117,4 +124,4 @@ var App = function (_React$Component) {
 }(React.Component);
 
 ReactDOM.render(React.createElement(App, null), document.getElementById('app'));
-//# sourceMappingURL=C:\Projects\meetuppres-react\august-meetup\app\app.js.map
+//# sourceMappingURL=C:\git\react-presentation\august-meetup\app\app.js.map

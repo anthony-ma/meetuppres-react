@@ -21,7 +21,6 @@ var Space = function (_React$Component) {
         }
 
         return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_Object$getPrototypeO = Object.getPrototypeOf(Space)).call.apply(_Object$getPrototypeO, [this].concat(args))), _this), _this.occupySpace = function () {
-            debugger;
             var newTicket = _this.refs.newTicket.value;
             _this.props.occupySpace(_this.props.id, newTicket);
         }, _this.clearSpace = function () {
@@ -58,6 +57,8 @@ Space.propTypes = {
     id: React.PropTypes.number.isRequired,
     occupied: React.PropTypes.bool.isRequired,
     number: React.PropTypes.number.isRequired,
-    ticket: React.PropTypes.string.isRequired
+    ticket: React.PropTypes.string.isRequired,
+    occupySpace: React.PropTypes.func.isRequired,
+    clearSpace: React.PropTypes.func.isRequired
 };
-//# sourceMappingURL=C:\Projects\meetuppres-react\august-meetup\app\space.js.map
+//# sourceMappingURL=C:\git\react-presentation\august-meetup\app\space.js.map
