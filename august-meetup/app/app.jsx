@@ -83,16 +83,21 @@ class App extends React.Component {
         ]
     }
 
-    selectSpace = (lotId, spaceId) => {
+    occupySpace = (lotId, spaceId, ticket) => {
+        console.log(lotId);
+        console.log(spaceId);
+    }
+
+    clearSpace = (lotId, spaceId) => {
         console.log(lotId);
         console.log(spaceId);
     }
 
     render = () => {
         return (
-            <div>
-                <Header title={this.state.title} />
-                {this.state.lots.map((lot) => <Lot key={lot.id} {...lot} selectSpace={this.selectSpace}/>)}
+            <div id='app'>
+                <h1>{this.state.title}</h1>
+                {this.state.lots.map((lot) => <Lot key={lot.id} {...lot} occupySpace={this.occupySpace} clearSpace={this.clearSpace}  />)}
             </div>
         )
     }

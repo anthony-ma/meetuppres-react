@@ -89,20 +89,23 @@ var App = function (_React$Component) {
                     ticket: 'L90'
                 }]
             }]
-        }, _this.selectSpace = function (lotId, spaceId) {
+        }, _this.occupySpace = function (lotId, spaceId, ticket) {
+            console.log(lotId);
+            console.log(spaceId);
+        }, _this.clearSpace = function (lotId, spaceId) {
             console.log(lotId);
             console.log(spaceId);
         }, _this.render = function () {
             return React.createElement(
                 'div',
-                null,
+                { id: 'app' },
                 React.createElement(
-                    'div',
-                    { className: 'header' },
+                    'h1',
+                    null,
                     _this.state.title
                 ),
                 _this.state.lots.map(function (lot) {
-                    return React.createElement(Lot, _extends({ key: lot.id }, lot, { selectSpace: _this.selectSpace }));
+                    return React.createElement(Lot, _extends({ key: lot.id }, lot, { occupySpace: _this.occupySpace, clearSpace: _this.clearSpace }));
                 })
             );
         }, _temp), _possibleConstructorReturn(_this, _ret);
@@ -112,4 +115,4 @@ var App = function (_React$Component) {
 }(React.Component);
 
 ReactDOM.render(React.createElement(App, null), document.getElementById('app'));
-//# sourceMappingURL=C:\git\react-presentation\august-meetup\app\app.js.map
+//# sourceMappingURL=C:\src\meetuppres-react\august-meetup\app\app.js.map

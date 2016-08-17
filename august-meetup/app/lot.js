@@ -27,21 +27,41 @@ var Lot = function (_React$Component) {
         }, _this.render = function () {
             return React.createElement(
                 'div',
-                null,
+                { className: 'lot' },
+                React.createElement(
+                    'button',
+                    { className: 'accordion-button' },
+                    'toggle'
+                ),
                 React.createElement(
                     'div',
-                    null,
+                    { className: 'lot-details' },
                     React.createElement(
                         'p',
-                        null,
+                        { className: 'lot-name' },
                         _this.props.name
+                    ),
+                    React.createElement(
+                        'p',
+                        { className: 'lot-address' },
+                        _this.props.address
+                    ),
+                    React.createElement(
+                        'p',
+                        { className: 'lot-manager' },
+                        _this.props.manager
+                    ),
+                    React.createElement(
+                        'p',
+                        { className: 'lot-phone' },
+                        _this.props.phone
                     )
                 ),
                 React.createElement(
                     'div',
                     { className: 'space-list' },
                     _this.props.spaces.map(function (space) {
-                        return React.createElement(Space, _extends({ key: space.id }, space, { selectSpace: _this.selectSpace }));
+                        return React.createElement(Space, _extends({ key: space.id }, space, { selectSpace: _this.selectSpace, clearSpace: _this.clearSpace }));
                     })
                 )
             );
@@ -60,4 +80,4 @@ Lot.propTypes = {
     spaces: React.PropTypes.array.isRequired,
     selectSpace: React.PropTypes.func.isRequired
 };
-//# sourceMappingURL=C:\git\react-presentation\august-meetup\app\lot.js.map
+//# sourceMappingURL=C:\src\meetuppres-react\august-meetup\app\lot.js.map

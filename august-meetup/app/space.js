@@ -37,13 +37,13 @@ var Space = function (_React$Component) {
                 ),
                 _this.props.occupied && React.createElement(
                     'p',
-                    { className: 'space-ticket' },
+                    { className: 'space-ticket-number' },
                     _this.props.ticket,
                     React.createElement('button', { type: 'button', className: 'space-occupy-button', onClick: _this.clearSpace })
                 ),
                 !_this.props.occupied && React.createElement(
                     'p',
-                    { className: 'space-ticket' },
+                    { className: 'space-ticket-number' },
                     React.createElement('input', { type: 'text', ref: 'newTicket' }),
                     React.createElement('button', { type: 'button', className: 'space-clear-button', onClick: _this.occupySpace })
                 )

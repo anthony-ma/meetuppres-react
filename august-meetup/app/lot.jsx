@@ -14,14 +14,16 @@ class Lot extends React.Component {
     }
 
     render = () => (
-        <div>
-            <div>
-                <p>
-                    {this.props.name}
-                </p>
+        <div className='lot'>
+          <button className='accordion-button'>toggle</button>
+            <div className='lot-details'>
+                <p className='lot-name'>{this.props.name}</p>
+                <p className='lot-address'>{this.props.address}</p>
+                <p className='lot-manager'>{this.props.manager}</p>
+                <p className='lot-phone'>{this.props.phone}</p>
             </div>
             <div className='space-list'>
-                {this.props.spaces.map((space) => <Space key={space.id} {...space} selectSpace={this.selectSpace} />)}
+                {this.props.spaces.map((space) => <Space key={space.id} {...space} selectSpace={this.selectSpace} clearSpace={this.clearSpace} />)}
             </div>
         </div>
     )
