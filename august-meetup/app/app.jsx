@@ -91,7 +91,7 @@ class App extends React.Component {
     render = () => {
         return (
             <div>
-                <Header title={this.state.title} />
+                <div className='header'>{this.state.title}</div>
                 {this.state.lots.map((lot) => <Lot key={lot.id} {...lot} selectSpace={this.selectSpace}/>)}
             </div>
         )
