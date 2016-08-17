@@ -55,7 +55,8 @@ var App = function (_React$Component) {
                     number: 5,
                     occupied: true,
                     ticket: 'P25'
-                }]
+                }],
+                class: 'lot'
             }, {
                 id: 2,
                 name: 'PARK \'N FLY',
@@ -87,7 +88,8 @@ var App = function (_React$Component) {
                     number: 5,
                     occupied: true,
                     ticket: 'L90'
-                }]
+                }],
+                class: 'lot'
             }]
         }, _this.occupySpace = function (lotId, spaceId, ticket) {
             console.log(lotId);
@@ -115,4 +117,4 @@ var App = function (_React$Component) {
 }(React.Component);
 
 ReactDOM.render(React.createElement(App, null), document.getElementById('app'));
-//# sourceMappingURL=C:\src\meetuppres-react\august-meetup\app\app.js.map
+//# sourceMappingURL=C:\Projects\meetuppres-react\august-meetup\app\app.js.map

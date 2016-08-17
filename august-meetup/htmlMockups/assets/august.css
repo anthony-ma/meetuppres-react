@@ -88,7 +88,6 @@ body {
     background: none;
     text-indent: -9999%;
     margin-top: 34px;
-    cursor:pointer;
 }
 .lot .accordion-button:before {
     content: '';
@@ -129,13 +128,12 @@ body {
 .space-list {
     background-color:rgb(250, 250, 250);
     max-height: 0;
-    overflow: hidden !important;
+    overflow: hidden;
     -webkit-transition: max-height .4s;
     -moz-transition: max-height .4s;
     -ms-transition: max-height .4s;
     -o-transition: max-height .4s;
     transition: max-height .4s;
-    position:relative;
 }
 
 .lot.open .space-list {

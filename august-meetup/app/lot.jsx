@@ -9,13 +9,26 @@ class Lot extends React.Component {
         selectSpace: React.PropTypes.func.isRequired
     }
 
+    state = {
+        class: 'lot',
+        open: false
+    }
+
     selectSpace = (spaceId) => {
         this.props.selectSpace(this.props.id, spaceId);
     }
 
+    handleClick = () => {
+        if (this.state.open) {
+            this.setState({open: false, class: "lot"});
+        } else {
+            this.setState({open: true, class: "lot open"});
+        }
+    }
+
     render = () => (
-        <div className='lot'>
-          <button className='accordion-button'>toggle</button>
+        <div className={this.state.class}>
+            <button className='accordion-button' onClick={this.handleClick}>toggle</button>
             <div className='lot-details'>
                 <p className='lot-name'>{this.props.name}</p>
                 <p className='lot-address'>{this.props.address}</p>

@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
@@ -22,44 +22,53 @@ var Lot = function (_React$Component) {
             args[_key] = arguments[_key];
         }
 
-        return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_Object$getPrototypeO = Object.getPrototypeOf(Lot)).call.apply(_Object$getPrototypeO, [this].concat(args))), _this), _this.selectSpace = function (spaceId) {
+        return _ret = (_temp = (_this = _possibleConstructorReturn(this, (_Object$getPrototypeO = Object.getPrototypeOf(Lot)).call.apply(_Object$getPrototypeO, [this].concat(args))), _this), _this.state = {
+            class: 'lot',
+            open: false
+        }, _this.selectSpace = function (spaceId) {
             _this.props.selectSpace(_this.props.id, spaceId);
+        }, _this.handleClick = function () {
+            if (_this.state.open) {
+                _this.setState({ open: false, class: "lot" });
+            } else {
+                _this.setState({ open: true, class: "lot open" });
+            }
         }, _this.render = function () {
             return React.createElement(
-                'div',
-                { className: 'lot' },
+                "div",
+                { className: _this.state.class },
                 React.createElement(
-                    'button',
-                    { className: 'accordion-button' },
-                    'toggle'
+                    "button",
+                    { className: "accordion-button", onClick: _this.handleClick },
+                    "toggle"
                 ),
                 React.createElement(
-                    'div',
-                    { className: 'lot-details' },
+                    "div",
+                    { className: "lot-details" },
                     React.createElement(
-                        'p',
-                        { className: 'lot-name' },
+                        "p",
+                        { className: "lot-name" },
                         _this.props.name
                     ),
                     React.createElement(
-                        'p',
-                        { className: 'lot-address' },
+                        "p",
+                        { className: "lot-address" },
                         _this.props.address
                     ),
                     React.createElement(
-                        'p',
-                        { className: 'lot-manager' },
+                        "p",
+                        { className: "lot-manager" },
                         _this.props.manager
                     ),
                     React.createElement(
-                        'p',
-                        { className: 'lot-phone' },
+                        "p",
+                        { className: "lot-phone" },
                         _this.props.phone
                     )
                 ),
                 React.createElement(
-                    'div',
-                    { className: 'space-list' },
+                    "div",
+                    { className: "space-list" },
                     _this.props.spaces.map(function (space) {
                         return React.createElement(Space, _extends({ key: space.id }, space, { selectSpace: _this.selectSpace, clearSpace: _this.clearSpace }));
                     })
@@ -80,4 +89,4 @@ Lot.propTypes = {
     spaces: React.PropTypes.array.isRequired,
     selectSpace: React.PropTypes.func.isRequired
 };
-//# sourceMappingURL=C:\src\meetuppres-react\august-meetup\app\lot.js.map
+//# sourceMappingURL=C:\Projects\meetuppres-react\august-meetup\app\lot.js.map

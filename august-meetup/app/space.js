@@ -38,15 +38,15 @@ var Space = function (_React$Component) {
                 _this.props.occupied && React.createElement(
                     'p',
                     { className: 'space-ticket-number' },
-                    _this.props.ticket,
-                    React.createElement('button', { type: 'button', className: 'space-occupy-button', onClick: _this.clearSpace })
+                    _this.props.ticket
                 ),
+                _this.props.occupied && React.createElement('button', { type: 'button', onClick: _this.clearSpace }),
                 !_this.props.occupied && React.createElement(
                     'p',
                     { className: 'space-ticket-number' },
-                    React.createElement('input', { type: 'text', ref: 'newTicket' }),
-                    React.createElement('button', { type: 'button', className: 'space-clear-button', onClick: _this.occupySpace })
-                )
+                    React.createElement('input', { type: 'text', ref: 'newTicket' })
+                ),
+                !_this.props.occupied && React.createElement('button', { type: 'button', onClick: _this.occupySpace })
             );
         }, _temp), _possibleConstructorReturn(_this, _ret);
     }
@@ -60,4 +60,4 @@ Space.propTypes = {
     number: React.PropTypes.number.isRequired,
     ticket: React.PropTypes.string.isRequired
 };
-//# sourceMappingURL=C:\src\meetuppres-react\august-meetup\app\space.js.map
+//# sourceMappingURL=C:\Projects\meetuppres-react\august-meetup\app\space.js.map

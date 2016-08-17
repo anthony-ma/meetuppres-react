@@ -39,7 +39,8 @@ class App extends React.Component {
                         occupied: true,
                         ticket: 'P25'
                     }
-                ]
+                ],
+                class:'lot'
             },
             {
                 id: 2,
@@ -78,7 +79,8 @@ class App extends React.Component {
                         occupied: true,
                         ticket: 'L90'
                     }
-                ]
+                ],
+                class:'lot'
             }
         ]
     }

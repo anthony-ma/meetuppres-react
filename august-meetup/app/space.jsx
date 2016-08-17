@@ -23,15 +23,20 @@ class Space extends React.Component {
             {this.props.occupied &&
               <p className='space-ticket-number'>
                 {this.props.ticket}
-                <button type='button' className='space-occupy-button' onClick={this.clearSpace} />
               </p>
+
+            }
+            {this.props.occupied &&
+                <button type='button' onClick={this.clearSpace} />
             }
 
             {!this.props.occupied &&
               <p className='space-ticket-number'>
                 <input type='text' ref="newTicket" />
-                <button type='button' className='space-clear-button' onClick={this.occupySpace} />
               </p>
+            }
+            {!this.props.occupied &&
+                <button type='button' onClick={this.occupySpace} />
             }
 
         </div>
