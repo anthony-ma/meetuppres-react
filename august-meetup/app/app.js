@@ -92,17 +92,22 @@ var App = function (_React$Component) {
                 class: 'lot'
             }]
         }, _this.occupySpace = function (lotId, spaceId, ticket) {
+            if (!ticket) {
+                alert('Please provide a ticket number');
+                return;
+            }
+
             var newLots = _this.getNewLots(lotId, spaceId, true, ticket);
             _this.setState({ lots: newLots });
         }, _this.clearSpace = function (lotId, spaceId) {
             var newLots = _this.getNewLots(lotId, spaceId, false, '');
             _this.setState({ lots: newLots });
         }, _this.getNewLots = function (lotId, spaceId, occupied, ticket) {
-            var lotIndex = _.findIndex(_this.state.lots, { id: lotId });
-            var spaceIndex = _.findIndex(_this.state.lots[lotIndex].spaces, { id: spaceId });
+            var lot = _.findIndex(_this.state.lots, { id: lotId });
+            var space = _.findIndex(_this.state.lots[lot].spaces, { id: spaceId });
             var newLots = _this.state.lots;
-            newLots[spaceIndex].spaces[spaceIndex].occupied = occupied;
-            newLots[spaceIndex].spaces[spaceIndex].ticket = ticket;
+            newLots[lot].spaces[space].occupied = occupied;
+            newLots[lot].spaces[space].ticket = ticket;
             return newLots;
         }, _this.render = function () {
             return React.createElement(

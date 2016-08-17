@@ -86,6 +86,11 @@ class App extends React.Component {
     }
 
     occupySpace = (lotId, spaceId, ticket) => {
+        if (!ticket) {
+            alert('Please provide a ticket number');
+            return;
+        }
+        
         var newLots = this.getNewLots(lotId, spaceId, true, ticket);
         this.setState({lots: newLots});
     }
@@ -96,11 +101,11 @@ class App extends React.Component {
     }
 
     getNewLots = (lotId, spaceId, occupied, ticket) => {
-        let lotIndex = _.findIndex(this.state.lots, {id: lotId});
-        let spaceIndex = _.findIndex(this.state.lots[lotIndex].spaces, {id: spaceId});
+        let lot = _.findIndex(this.state.lots, {id: lotId});
+        let space = _.findIndex(this.state.lots[lot].spaces, {id: spaceId});
         let newLots = this.state.lots;
-        newLots[spaceIndex].spaces[spaceIndex].occupied = occupied;
-        newLots[spaceIndex].spaces[spaceIndex].ticket = ticket;
+        newLots[lot].spaces[space].occupied = occupied;
+        newLots[lot].spaces[space].ticket = ticket;
         return newLots;
     }
 
