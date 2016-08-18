@@ -21,6 +21,7 @@ class Space extends React.Component {
         <div className={'space' + (this.props.occupied ? ' space-occupied-true' : '')}>
             <p className='space-number'>{this.props.number}</p>
 
+            {/*bad thing about react, only one top level element returned*/}
             {this.props.occupied &&
               <p className='space-ticket-number'>
                 {this.props.ticket}
@@ -30,7 +31,7 @@ class Space extends React.Component {
             {this.props.occupied &&
                 <button type='button' onClick={this.clearSpace} />
             }
-
+            {/*bad thing about react, only one top level element returned*/}
             {!this.props.occupied &&
               <p className='space-ticket-number'>
                 <input type='text' ref="newTicket" />

@@ -61,4 +61,4 @@ Space.propTypes = {
     occupySpace: React.PropTypes.func.isRequired,
     clearSpace: React.PropTypes.func.isRequired
 };
-//# sourceMappingURL=C:\git\react-presentation\august-meetup\app\space.js.map
+//# sourceMappingURL=C:\Projects\meetuppres-react\august-meetup\app\space.js.map

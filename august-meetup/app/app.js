@@ -129,4 +129,4 @@ var App = function (_React$Component) {
 }(React.Component);
 
 ReactDOM.render(React.createElement(App, null), document.getElementById('app'));
-//# sourceMappingURL=C:\git\react-presentation\august-meetup\app\app.js.map
+//# sourceMappingURL=C:\Projects\meetuppres-react\august-meetup\app\app.js.map

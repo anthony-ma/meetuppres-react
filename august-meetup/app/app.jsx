@@ -90,7 +90,7 @@ class App extends React.Component {
             alert('Please provide a ticket number');
             return;
         }
-        
+
         var newLots = this.getNewLots(lotId, spaceId, true, ticket);
         this.setState({lots: newLots});
     }
