@@ -1,3 +1,5 @@
+# REDUX INTRO
+
 #### Shamelessly lifted from http://redux.js.org/docs/basics/
 
 ## Actions
