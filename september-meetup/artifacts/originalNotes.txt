@@ -1,0 +1,25 @@
+store/provider - manager
+state -
+	{
+		truck: {
+			isParked: bool,
+			isLoaded: bool,
+			destination: string
+		}
+	}
+actions -
+	truck arrived -
+		secretary - clears the route for arriving truck (truck.destination = '')
+		driver - parks truck at loading dock (truck.isParked = true)
+	unload truck -
+		worker - unloads truck (truck.isLoaded = false)
+	plan route -
+		secretary - tells driver where to go for next shipment (truck.destination = 'new place')
+	load truck -
+		worker - loads truck (truck.isLoaded = true)
+	truck departure -
+		driver - drives truck away (truck.isParked = false)
+reducers -
+	isParked
+	isLoaded
+	destination
