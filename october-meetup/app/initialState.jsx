@@ -1,0 +1,21 @@
+const initialState = {
+  trucks: [{
+    id:1,
+    name:'truck 1',
+    isParked:false,
+    isLoaded:true,
+    destination:'warehouse'
+  }, {
+    id:2,
+    name:'truck 2',
+    isParked:true,
+    isLoaded:false,
+    destination:'tampa'
+  }, {
+    id:3,
+    name:'truck 3',
+    isParked:false,
+    isLoaded:true,
+    destination:'seattle'
+  }]
+};
