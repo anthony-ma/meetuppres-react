@@ -17,5 +17,8 @@ const initialState = {
     isParked:false,
     isLoaded:true,
     destination:'seattle'
-  }]
+  }],
+  warehouseName:'Meetup Warehouse',
+  address:'123 Meetup Way'
+
 };

@@ -19,6 +19,9 @@ var initialState = {
     isParked: false,
     isLoaded: true,
     destination: 'seattle'
-  }]
+  }],
+  warehouseName: 'Meetup Warehouse',
+  address: '123 Meetup Way'
+
 };
 //# sourceMappingURL=G:\projects\meetuppres-react\october-meetup\app\initialState.js.map

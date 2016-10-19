@@ -1,0 +1,17 @@
+.warehouse {
+  padding:8px;
+  margin:12px;
+  border:1px solid blue;
+}
+
+.truck {
+  padding:4px;
+  margin:4px;
+  border:1px solid lightblue;
+  background-color:#FFFFFF;
+}
+
+#app {
+  padding:20px;
+  background-color:#3E3E3E;
+}
