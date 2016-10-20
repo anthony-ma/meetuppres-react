@@ -6,7 +6,8 @@ module.exports = {
     context: path.join(__dirname, ''),
     devtool: 'source-map',
     entry: {
-        october: './october-meetup/app/app.js'
+        october: './october-meetup/app/app.js',
+        octoberLive: './october-meetup/live/app.js'
     },
     output: {
         path: path.join(__dirname, './bundles'),
@@ -24,13 +25,14 @@ module.exports = {
             {
                 test: /\.jsx?$/,
                 loaders: ['eslint'],
-                include: path.join(__dirname, './bundles')
+                include: path.join(__dirname, '')
             }
         ],
         loaders: [
             {
                 test: /(\.js|\.jsx)$/,
-                loaders: ['babel']
+                loaders: ['babel'],
+                include: path.join(__dirname, '')
             },
             {
                 test: /(\.scss|\.css)$/,
