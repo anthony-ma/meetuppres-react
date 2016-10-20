@@ -2,7 +2,7 @@ import terms from './action-terms';
 
 export const truckArrival = (text, id) => ({
     type: terms.truckArrival,
-    text,
+    text, 
     id
 });
 
