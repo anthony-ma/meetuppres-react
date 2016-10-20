@@ -1,3 +1,6 @@
+import terms from './action-terms';
+import _ from 'lodash';
+
 const truckReducer = (state = [], action) => {
   let trucks = state;
   const index = _.findIndex(trucks, { id: action.id });
@@ -29,7 +32,6 @@ const truckReducer = (state = [], action) => {
 
     case terms.loadTruck:
       truck.isLoaded = true;
-      truck.destination = '';
       return [
         ...trucks.slice(0, index),
         truck,
@@ -49,8 +51,6 @@ const truckReducer = (state = [], action) => {
   }
 }
 
-
-
-const appReducer = Redux.combineReducers({
-  trucks: truckReducer
-});
+export default {
+    trucks: truckReducer
+};

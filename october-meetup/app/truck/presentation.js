@@ -1,3 +1,6 @@
+import React from 'react';
+import { PropTypes } from 'react';
+
 class Truck extends React.Component {
   arrivalClick = () => {
     this.props.handleTruckArrival('', this.props.id);
@@ -24,8 +27,8 @@ class Truck extends React.Component {
       <div className='truck'>
         <div>
           <p><span className='title'>Name</span>{this.props.name}</p>
-          <p><span className='title'>IsParked</span>{this.props.isParked}</p>
-          <p><span className='title'>IsLoaded</span>{this.props.isLoaded}</p>
+          <p><span className='title'>IsParked</span>{this.props.isParked ? 'true' : 'false'}</p>
+          <p><span className='title'>IsLoaded</span>{this.props.isLoaded ? 'true' : 'false'}</p>
           <p><span className='title'>Destination</span>{this.props.destination}</p>
         </div>
         <div>
@@ -40,14 +43,16 @@ class Truck extends React.Component {
   }
 }
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    handleTruckArrival: truckArrival,
-    handleUnloadTruck: unloadTruck,
-    handlePlanRoute: planRoute,
-    handleLoadTruck: loadTruck,
-    handleTruckDeparture: truckDeparture
-  };
-}
+Truck.propTypes = {
+    name: PropTypes.string.isRequired,
+    isParked: PropTypes.bool.isRequired,
+    isLoaded: PropTypes.bool.isRequired,
+    destination: PropTypes.string.isRequired,
+    handleTruckArrival: PropTypes.func.isRequired,
+    handleUnloadTruck: PropTypes.func.isRequired,
+    handlePlanRoute: PropTypes.func.isRequired,
+    handleLoadTruck: PropTypes.func.isRequired,
+    handleTruckDeparture: PropTypes.func.isRequired
+};
 
-ReactRedux.connect(null, mapDispatchToProps)(Truck);
+export default Truck;
